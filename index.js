@@ -26,7 +26,7 @@ $(function () {
       inputdata = inputdata + "【メモ】" + "\n"　+ memo + "\n" + "【メモ分類】" + "\n" + category;
       
       //postより先にsendtextしてGASスプレッドシートにLINE表示名を設定する。  
-      sendText(inputdata);//To LINE 送信
+      //sendText(inputdata);//To LINE 送信
       
       const datecurrent = new Date();
       const nowdate = datecurrent.getFullYear() + "年" + 
@@ -61,6 +61,7 @@ $(function () {
          //console.log(dt);liff.closeWindow();
 	          if(dt.message == 'success!')
 		  {
+			  sendText(inputdata);//To LINE 送信
 			  liff.closeWindow(); 
 		  }else
 		  {
