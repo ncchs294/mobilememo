@@ -1,9 +1,46 @@
+Skip to content
+Search or jump to…
+
+Pull requests
+Issues
+Marketplace
+Explore
+ 
+@whoshi 
+Learn Git and GitHub without any code!
+Using the Hello World guide, you’ll start a branch, write comments, and open a pull request.
+
+
+whoshi
+/
+lbila
+1
+00
+Code
+Issues
+Pull requests
+Actions
+Projects
+Wiki
+Security
+Insights
+Settings
+lbila/index.html
+@whoshi
+whoshi Update index.html
+Latest commit 7f2a8ac 7 days ago
+ History
+ 1 contributor
+122 lines (102 sloc)  4.65 KB
+  
 <!DOCTYPE html>
-<html lang="ja">
+<html lang="en">
+
 <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <title>LBILA Mobile Memo</title>
+    <title>モバイルメモフォーム</title>
+  
     <style type="text/css">    
     body{
          -webkit-text-size-adjust: 100%;
@@ -12,8 +49,8 @@
 　 input,select,textarea{
           background: #FFEEFF;
          }
-    input,select,textarea,button{
-          font-size:16px;
+    input,select,textarea,button,label{
+          font-size:45px;
          }
      h1{
           text-align:center;
@@ -23,36 +60,33 @@
           text-align:right;
            line-height:5px;
        }
+     input[type=radio] {
+       width: 50px;
+       height: 50px;
+       vertical-align: middle;
+       }
+     
     </style>
-
-
 </head>
+
 <body>
-
-
+    
 <h1>
-<font size="6" color="#666666">モバイルメモ</font>
+<font size="10" color="#666666">モバイルメモ</font>
 </h1>
 <h2>
-<font size="1" color="#aaaaaa">LBILA Mobile Memo for LIFF β Edition</font>
+<font size="5" color="#aaaaaa">LBILA Mobile Memo for LIFF 0100 Edition</font>
 </h2>
 
-
-
-<!--
-<form method=”post” action=”https://script.google.com/macros/s/AKfycbyYeIad_7xrWIA5QBA9aLj9xPF6_WMgPIDAErHdw6rPea1ZuAa5/exec”>
--->
 <div class="container">
-    <!--
-    <form class="formmemo" id="myForm" onsubmit="return false;">
-    -->
+    
     <form class="formmemo" id="myForm"onsubmit="myFormSubmit(this);">  
         <div class="formmemo-group">
             <label class="formmemo-label" for="input_customername">顧客名</label>
            
             <div class="formmemo-data">
                 <div style="margin-left:0%;margin-right:10%;">
-                <textarea name="customername" cols="35" rows="1" id="input_customername" placeholder="例：コロッケそば"></textarea>
+                <textarea name="customername" cols="35" rows="2" id="input_customername" placeholder="例：コロッケそば"></textarea>
                 </div>
             </div>
            
@@ -80,187 +114,56 @@
                          <label class="formmemo-label">メモ分類</label>
                         <br>
                         <label class="radio-inline">
-                            <input type="radio" name="category" value="テレワーク" required>テレワーク
+                            <input type="radio"  name="category" id="input_category" value="テレワーク" >テレワーク
                         </label>
                     
                         <label class="radio-inline">
-                            <input type="radio" name="category" value="DX（IoT/AI/ロボット/etc）" required>DX（IoT/AI/ロボット/etc）
+                            <input type="radio" name="category" id="input_category" value="DX（IoT/AI/ロボット/etc）" >DX（IoT/AI/ロボット/etc）
                         </label>
-                       <br>
+                       <br><br>
                         <label class="radio-inline">
-                            <input type="radio" name="category" value="アフター/ウィズ コロナ" required>アフター/ウィズ コロナ
+                            <input type="radio" name="category" id="input_category" value="アフター/ウィズ コロナ" >アフター/ウィズ コロナ
                         </label>
                         <label class="radio-inline">
-                            <input type="radio" name="category" value="アイディア/その他" required>アイディア/その他
+                            <input type="radio" name="category" id="input_category" value="アイディア/その他" >アイディア/その他
                         </label>
                     </div>
          </div>
-        <!--
-        <div class="formmemo-group">
-            <label class="formmemo-label">メモ分類</label>
-            <div class="formmemo-data">
-                <div style="margin-left:0%;margin-right:10%;">
-                <select name="category" id="formmemo-select" class="formmemo-selectpicker" data-live-search="true" style="height:35px;width:300px;">
-                  <option selected>テレワーク</option>
-                  <option>DX（IoT/AI/ロボット/etc）</option>
-                  <option>アフター/ウィズ コロナ</option>
-                  <option>アイディア/その他</option>
-                </select>
-                </div>
-            </div>
-        </div>
-        -->
-        <br>
+         <br><br>
          <div class="formmemo-group">
             <div class="formmemo-button">
                  
-                 <!--
-                 <input type="button" name="enyry" value="登録" onClick="google.script.run.withSuccessHandler(afterentry).myFunction(this.parentNode);">
-                  <input type="submit" value="登録する">  
-                 -->
-                
-                 <div style="margin-left:0%;margin-right:10%;">
-                     <input type="submit" style="width:100%;padding:10px;font-size:30px;background-color:#008000;color:#FFFFFF" value="登録する" />
+                 
+                 <div style="margin-left:10%;margin-right:10%;">
+                     <input type="submit" id="input_send" style="width:100%;padding:10px;font-size:100px;background-color:#008000;color:#FFFFFF" value="登録する" />
                  </div>
             </div>
         </div>
         
         <br>
     </form>
-
-<!--
-<i id="processing" class="fa fa-refresh fa-spin fa-3x fa-fw"></i>
--->
+  
 </div>
-<!--
-</form>
--->
-<script src="https://static.line-scdn.net/liff/edge/2/sdk.js"></script>
-     
-<script type="text/javascript">
-
-
-
-
-//
-//LIFF 初期化
-//
-
-
-document.addEventListener("DOMContentLoaded", () => {
-      
-       liff
-        .init({
-            liffId: '1654390065-9nadRnPq'
-        })
-        .then(() => {
-            //if (!liff.isInClient() && !liff.isLoggedIn()) {
-                //window.alert("LINEアカウントにログインしてください。");
-                //liff.login();
-                //liff.closeWindow(); 
-                
-            //}
-            //window.alert("LIFF.isInClient()---> " + liff.isInClient());
-            
-            
-        })
-        .catch((err) => {
-            window.alert("LIFF INIT ERROR");
-        });
-        
-         
-    });
-   
-
-
-
-//
-// 入力フォームをGAS側メソッドmyFunctionに引き渡す
-//
-function myFormSubmit(formObject) {
-      
-      google.script.run.withSuccessHandler(afterentry).myFunction(formObject);
-      
-      //google.script.run.myFunction(formObject);    
-      //sendMessages('登録しました');
-  
-      //liff.closeWindow();  
-      
-      
-    }
-//
-//GAS サーバサイドメソッドへの送信
-function send(e){
-  //データを送信して結果を受け取り、errorhandlmsgへ渡す
-  //google.script.run.withSuccessHandler(errorhandlmsg).myFunction();
-  
-  
-  //google.script.run
-  //      .withSuccessHandler(afterentry)
-  //      .myFunction(e);
-  
-  
-}
-//
-//サーバサイド処理後の結果取得
-//
-function afterentry(msg){
-  var result = JSON.parse(msg);
- 
-  
-  
-  //alert('liff.isClient()---> ' + liff.isInClient());
-          //liff.closeWindow(); 
-  //alert('liff.getOS()---> ' + liff.getOS());
-  
-  
-  if(result == 'ok')
-  {
-     alert('登録されました　\n\n\n' + '右上の「☓」をタップして閉じてください');
-  }
-  else{
-  
-     alert('登録でエラーが発生しました　\n\n\n' + '右上の「☓」をタップして閉じてください');
-  }
-  
-  
-  
-  //sendMessages('登録しました');
-  
-  //liff.closeWindow();
-  
-  
-   //var msg;
-   //if(liff.isInClient())
-   //{
-   //   alert("LINE内ブラウザ");
-   //liff.closeWindow(); 
-   //}
-   //else
-   //{
-   //   alert("LINE外ブラウザ");
-   //   
-   //}
-  
-  
-}
-function sendMessages(text) {
-    liff.sendMessages([{
-        'type': 'text',
-        'text': text
-    }]).then(function () {
-        liff.closeWindow();
-    }).catch(function (error) {
-        window.alert('Failed to send message ' + error);
-    });
-}
-
-</script>
+    
+    <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
+    <script charset="utf-8" src="https://static.line-scdn.net/liff/edge/2.1/sdk.js"></script>
+    <script src="liff.js"></script>
+    <script src="index.js"></script>
 </body>
+
 </html>
-
-
-
-
-
-
+© 2020 GitHub, Inc.
+Terms
+Privacy
+Security
+Status
+Help
+Contact GitHub
+Pricing
+API
+Training
+Blog
+About
