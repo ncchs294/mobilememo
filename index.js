@@ -58,13 +58,10 @@ $(function () {
 	      
      //スピナー表示
      //インジケータ表示
-     //var indicator = this.indicator({
-     //                message: '処理中'
-     //                }).show();
-    var indicator = this.indicator({
- message: 'block',
- target :document.body
-}).show();  
+     var indicator = this.indicator({
+                     message: '処理中'
+                     }).show();
+    
 	      
 	      
      $.post(url,
