@@ -61,7 +61,10 @@ $(function () {
      //var indicator = this.indicator({
      //                message: '処理中'
      //                }).show();
-	      
+    var indicator = this.indicator({
+ message: 'block',
+ target :document.body
+}).show();  
 	      
 	      
      $.post(url,
@@ -69,7 +72,7 @@ $(function () {
       function(dt){
          //console.log(dt);liff.closeWindow();
 	          //インジケータ除去
-                  //indicator.hide();
+                  indicator.hide();
 	          if(dt.message == 'success!')
 		  {
 			  sendText(inputdata);//To LINE 送信
