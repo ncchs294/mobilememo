@@ -58,18 +58,36 @@ $(function () {
 	      
      //スピナー表示
      //インジケータ表示
-     var indicator = this.indicator({
-                     message: '処理中'
-                     }).show();
-    
-	      
+     //var indicator = this.indicator({
+     //                message: '処理中'
+     //                }).show();
+     // 
+     var indicatorController = {
+
+		
+
+		
+
+			//インジケータ表示
+			var indicator = this.indicator({
+				message: 'block'
+			}).show();
+
+			setTimeout(function() {
+
+				//インジケータ除去
+				indicator.hide();
+
+			}, 800);
+		
+	};	      
 	      
      $.post(url,
       JSONdata,
       function(dt){
          //console.log(dt);liff.closeWindow();
 	          //インジケータ除去
-                  indicator.hide();
+                  //indicator.hide();
 	          if(dt.message == 'success!')
 		  {
 			  sendText(inputdata);//To LINE 送信
