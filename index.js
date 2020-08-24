@@ -62,7 +62,8 @@ $(function () {
      //                message: '処理中'
      //                }).show();
      // 
-     
+     // Loading 画像を表示
+     dispLoading("処理中...");
 	      
      $.post(url,
       JSONdata,
@@ -70,6 +71,8 @@ $(function () {
          //console.log(dt);liff.closeWindow();
 	          //インジケータ除去
                   //indicator.hide();
+	          // Loading 画像を消す
+                  removeLoading();
 	          if(dt.message == 'success!')
 		  {
 			  sendText(inputdata);//To LINE 送信
