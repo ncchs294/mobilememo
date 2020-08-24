@@ -58,10 +58,6 @@ $(function () {
 	      
      //スピナー表示
      //インジケータ表示
-     //var indicator = this.indicator({
-     //                message: '処理中'
-     //                }).show();
-     // 
      // Loading 画像を表示
      dispLoading("処理中...");
 	      
@@ -70,7 +66,6 @@ $(function () {
       function(dt){
          //console.log(dt);liff.closeWindow();
 	          //インジケータ除去
-                  //indicator.hide();
 	          // Loading 画像を消す
                   removeLoading();
 	          if(dt.message == 'success!')
