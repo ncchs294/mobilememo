@@ -62,25 +62,7 @@ $(function () {
      //                message: '処理中'
      //                }).show();
      // 
-     var indicatorController = {
-
-		
-
-		
-
-			//インジケータ表示
-			var indicator = this.indicator({
-				message: 'block'
-			}).show();
-
-			setTimeout(function() {
-
-				//インジケータ除去
-				indicator.hide();
-
-			}, 800);
-		
-	};	      
+     
 	      
      $.post(url,
       JSONdata,
