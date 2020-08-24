@@ -112,7 +112,7 @@ function dispLoading(msg){
   if(msg === undefined ) msg = "";
   
   // 画面表示メッセージを埋め込み
-  var innerMsg = "<div id='innerMsg' width: 300px;height: 200px;>" + msg + "</div>";  
+  var innerMsg = "<div id='innerMsg'>" + msg + "</div>";  
   
   // ローディング画像が非表示かどうかチェックし、非表示の場合のみ出力。
   if($("#nowLoading").length == 0){
