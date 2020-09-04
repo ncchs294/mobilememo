@@ -59,7 +59,7 @@ $(function () {
      //スピナー表示
      //インジケータ表示
      // Loading 画像を表示
-     dispLoading("処理中...");
+     dispLoading("データ暗号化処理中...");
 	      
      $.post(url,
       JSONdata,
